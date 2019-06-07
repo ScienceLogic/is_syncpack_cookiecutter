@@ -1,0 +1,7 @@
+{
+	"author": "ScienceLogic Inc.",
+	"syncpack_name": "syncpack_test",
+	"project_short_description": "An IS Syncpack for ....",
+	"version": "0.0.1",
+	"requires_minimum_is_version": ">=1.9.0"
+}

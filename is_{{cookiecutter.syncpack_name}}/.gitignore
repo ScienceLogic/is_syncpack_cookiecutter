@@ -1,0 +1,12 @@
+.idea
+venv
+*.pyc
+venv_client
+env/
+.tox/
+*_cache/
+*_report.xml
+*.swp
+dist/
+build/
+*egg-info/

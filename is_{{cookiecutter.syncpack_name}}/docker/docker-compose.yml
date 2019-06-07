@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+    sut:
+        container_name: {{cookiecutter.syncpack_name}}_test
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+            target: test
+            args:
+                PIP_INDEX: http://repository.auto.sciencelogic.local/artifactory/api/pypi/pypi/simple
+                PIP_HOST: repository.auto.sciencelogic.local
+        image: is_{{cookiecutter.syncpack_name}}:unit-test
+        command: tox

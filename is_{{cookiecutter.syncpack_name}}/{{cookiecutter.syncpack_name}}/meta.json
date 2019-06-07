@@ -1,0 +1,18 @@
+{
+  "schedules": [
+    {
+      "application_id": "dummy_app",
+      "entry_id": "dummy app",
+        "params": {},
+        "schedule": {
+            "schedule_info": {
+                "run_every": 3600
+            },
+            "schedule_type": "frequency"
+        }
+    }
+  ],
+  "tags":["{{cookiecutter.syncpack_name}}"],
+  "critical": [],
+  "requires_is_version": "{{cookiecutter.requires_minimum_is_version}}"
+}
