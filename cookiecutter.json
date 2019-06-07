@@ -1,5 +1,6 @@
 {
-	"author": "ScienceLogic Inc.",
+	"author": "author",
+	"url_project": "https://repository/is_syncpack_test",
 	"syncpack_name": "syncpack_test",
 	"project_short_description": "An IS Syncpack for ....",
 	"version": "0.0.1",

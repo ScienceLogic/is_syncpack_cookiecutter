@@ -8,7 +8,7 @@ setup(
     author='{{cookiecutter.author}}',
     packages=find_packages(exclude=['docs', 'tests*']),
     include_package_data=True,
-    url='https://code.eng.sciencelogic.com/projects/AIR/repos/is_{{cookiecutter.syncpack_name}}',
+    url='{{cookiecutter.url_project}}',
     install_requires=[],
     classifiers=[
         'Development Status :: 4 - Beta',

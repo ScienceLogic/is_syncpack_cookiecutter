@@ -1,6 +1,6 @@
 {
   "description": "Some stuff then trigger a child",
-  "author": "ScienceLogic, Inc.",
+  "author": "{{cookiecutter.author}}",
   "app_variables": [],
   "friendly_name": "dummy app",
   "version": "1.0.0",
