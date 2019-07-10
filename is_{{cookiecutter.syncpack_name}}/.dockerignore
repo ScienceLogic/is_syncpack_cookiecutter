@@ -1,0 +1,7 @@
+.idea
+venv
+.DS_Store
+.gitignore
+.git
+*.pyc
+venv_client

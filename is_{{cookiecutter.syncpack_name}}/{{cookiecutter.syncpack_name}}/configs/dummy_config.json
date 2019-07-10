@@ -1,0 +1,9 @@
+{
+  "configuration_data": [
+    {"name": "dummy_name", "value": "dummy_value"}
+  ],
+  "friendly_name": "dummy config",
+  "description": "Dummy config as example",
+  "version": "1.0.0",
+  "name": "dummy_config"
+}

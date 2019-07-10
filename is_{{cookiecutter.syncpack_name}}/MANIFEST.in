@@ -1,0 +1,2 @@
+recursive-include {{cookiecutter.syncpack_name}} *.json
+include README.md
