@@ -1,4 +1,11 @@
-# {{cookiecutter.syncpack_name}} SyncPack
+# {{cookiecutter.syncpack_name|replace('_', ' ')}}
 Version: {{cookiecutter.version}}
 
-***This version of the SyncPack requires IS version {{cookiecutter.requires_minimum_is_version}}***
+{{cookiecutter.project_short_description}}
+
+### Features
+
+## Version Requirements
+| Platform | Version |
+| --- | --- |
+| IS |  {{cookiecutter.requires_minimum_is_version}} |
