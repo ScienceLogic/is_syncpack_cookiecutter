@@ -1,7 +1,7 @@
-# {{cookiecutter.syncpack_name|replace('_', ' ')}}
+# {{cookiecutter.syncpack_friendly_name}}
 Version: {{cookiecutter.version}}
 
-{{cookiecutter.project_short_description}}
+{{cookiecutter.syncpack_description}}
 
 ### Features
 

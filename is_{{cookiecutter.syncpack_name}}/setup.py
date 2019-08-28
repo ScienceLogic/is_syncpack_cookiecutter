@@ -4,7 +4,8 @@ from setuptools import setup, find_packages
 setup(
     name="{{cookiecutter.syncpack_name}}",
     version="{{cookiecutter.version}}",
-    description="{{cookiecutter.project_short_description}}",
+    description="{{cookiecutter.syncpack_friendly_name}}",
+    long_description="{{cookiecutter.syncpack_description}}",
     author="{{cookiecutter.author}}",
     packages=find_packages(exclude=["docs", "tests*"]),
     include_package_data=True,
