@@ -5,5 +5,5 @@
 	"syncpack_friendly_name": "Testing Syncpack",
 	"syncpack_description": "IS Syncpack for testing",
 	"version": "0.0.1",
-	"requires_minimum_is_version": ">=1.9.0"
+	"requires_minimum_is_version": ">=2.0.0"
 }
