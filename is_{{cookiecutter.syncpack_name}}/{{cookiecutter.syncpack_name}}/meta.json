@@ -1,4 +1,11 @@
 {
+  "name": "{{cookiecutter.syncpack_name}}",
+  "version": "{{cookiecutter.version}}",
+  "summary":"{{cookiecutter.syncpack_friendly_name}}",
+  "description":"{{cookiecutter.syncpack_description}}",
+  "author":"{{cookiecutter.author}}",
+  "home_page":"{{cookiecutter.url_project}}",
+  "requires_dist":[],
   "schedules": [
     {
       "application_id": "dummy_app",
