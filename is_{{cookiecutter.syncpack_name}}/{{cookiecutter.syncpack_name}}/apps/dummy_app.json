@@ -1,8 +1,8 @@
 {
-  "description": "Some stuff then trigger a child",
+  "description": "Dummy Application as example",
   "author": "{{cookiecutter.author}}",
   "app_variables": [],
-  "friendly_name": "dummy app",
+  "friendly_name": "Dummy App",
   "version": "1.0.0",
   "steps": [
     {
