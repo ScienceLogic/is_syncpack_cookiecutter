@@ -4,7 +4,9 @@
         {
             "label": "PF: Build and Upload SyncPack",
             "type": "shell",
-            "command": "iscli -H ${input.PF-Host} -U ${PF-User} -p ${PF-Pass} -ukFf ${workspaceFolder}"
+            "command": "iscli",
+            "args": ["-H", "${input:PF-Host}", "-U", "${input:PF-User}", "-p", "${input:PF-Pass}", "-ukFf", "${workspaceFolder}"],
+            "problemMatcher": []
         }
     ],
     "inputs": [
