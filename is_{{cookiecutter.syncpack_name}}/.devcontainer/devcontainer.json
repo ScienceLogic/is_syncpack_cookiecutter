@@ -7,7 +7,7 @@
 		"context": "..",
 		// Update 'VARIANT' to pick a Python version. Rebuild the container 
 		// if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
-		"args": { "VARIANT": "3.7" }
+		"args": { "VARIANT": "3.7-stretch" }
 	},
 
 	// Set *default* container specific settings.json values on container create.
@@ -37,7 +37,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --extra-index-url http://scr.sl1.io/artifactory/api/pypi/pypi-local/simple  --trusted-host scr.sl1.io --user -r dev-requirements.txt && pip3 install --user -e .",
+	"postCreateCommand": "pip3 install --user -e .",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
