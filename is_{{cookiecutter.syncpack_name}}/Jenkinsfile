@@ -1,0 +1,16 @@
+#!groovy
+@Library("composePipeline@1.2.1")__
+node('dockerslaves') {
+    stage('Test') {
+        def imageName = "{{cookiecutter.syncpack_name}}"
+        pipelineArgs = [PUBLISH: false]
+        if (env.BRANCH_NAME == "master") {
+            pipelineArgs = [PUBLISH: true]
+        }
+        pipelineArgs["composeFile"] = "docker/docker-compose.yml"
+        pipelineArgs["dockerFile"] = "docker/Dockerfile"
+
+        compose.defaultLibraryPipeline(imageName,pipelineArgs)
+    }
+
+}

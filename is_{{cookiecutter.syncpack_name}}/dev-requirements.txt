@@ -1,0 +1,8 @@
+pytest
+pytest-cov
+pytest-mock
+pytest-powerflow
+requests-mock
+celery==4.1.71
+ipaascommon==dev
+base_steps_syncpack
