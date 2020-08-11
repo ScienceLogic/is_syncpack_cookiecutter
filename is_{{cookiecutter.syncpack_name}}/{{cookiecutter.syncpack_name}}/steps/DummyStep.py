@@ -11,4 +11,4 @@ class DummyStep(BaseStep):
         All logic main logic for executing the step happens here
         :return:
         """
-        pass
+        self.save_data_to_next_step("foo")
