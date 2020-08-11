@@ -54,5 +54,5 @@ RUN wget http://packages.couchbase.com/releases/couchbase-release/couchbase-rele
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 COPY dev-requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install --extra-index-url http://scr.sl1.io/artifactory/api/pypi/pypi-local/simple  --trusted-host scr.sl1.io -r /tmp/pip-tmp/dev-requirements.txt \
-    && pip3 --disable-pip-version-check --no-cache-dir install --extra-index-url http://scr.sl1.io/artifactory/api/pypi/pypi-local/simple  --trusted-host scr.sl1.io --no-deps pytest-powerflow \
+    && pip3 --disable-pip-version-check --no-cache-dir install --extra-index-url http://scr.sl1.io/artifactory/api/pypi/pypi-local/simple  --trusted-host scr.sl1.io --no-deps pytest-powerflow iscli \
     && rm -rf /tmp/pip-tmp

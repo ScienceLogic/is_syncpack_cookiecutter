@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PF: Build and Upload SyncPack",
+            "type": "shell",
+            "command": "iscli -H ${input.PF-Host} -U ${PF-User} -p ${PF-Pass} -ukFf ${workspaceFolder}"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "PF-Host",
+            "type": "promptString",
+            "description": "IP or Hostname of your PowerFlow Stack"
+        },
+        {
+            "id": "PF-User",
+            "type": "promptString",
+            "default": "isadmin",
+            "description": "PowerFlow User"
+        },
+        {
+            "id": "PF-Pass",
+            "type": "promptString",
+            "password": true,
+            "default": "isadmin",
+            "description": "PowerFlow Password"
+        }
+    ]
+}
