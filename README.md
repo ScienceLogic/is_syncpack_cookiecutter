@@ -24,6 +24,18 @@ The generated package will contain a [Visual Studio Code DevContainer](https://c
 When you open the generated folder with VSCode you will get a prompt to open the workspace within the container.  
 This Container contains a functional environment for developing and testing your SyncPack steps without the need of a PowerFlow system.
 
+**Usage**
+1. After completing the cookie cutter run, open the generated folder in Visual Studio Code
+1. Open a new Terminal in VSCode (ctrl+shift+`)
+1. `cd` to `.devcontainer`
+1. Run `docker build --pull --rm --network=host -f "Dockerfile" -t syncpack-env:latest .`
+1. After the build completes, pull up the command pallet (ctrl+shift+P) and run `Remote-Containers: Reopen in Container`
+Your environemt should now be ready.
+If you need any additional syncpacks or packages to be available, add them to the .devcontainers/dev-requirements.txt, repeat the build command and re-open in the container again.
+
+*Linux Notes*  
+If the build fails to resolve the internal repositories, you may need to set `DOCKER_OPTS="--dns <dns ip>"` in `/etc/default/docker` and restart the docker service.
+
 Tasks
 -----
 The generated package will contain a [task](https://code.visualstudio.com/docs/editor/tasks) to build and upload your SyncPack to a PowerFlow system.
