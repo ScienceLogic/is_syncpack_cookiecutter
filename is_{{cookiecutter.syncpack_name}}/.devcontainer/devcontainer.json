@@ -1,14 +1,8 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/python-3
 {
-	"name": "Python 3",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "..",
-		// Update 'VARIANT' to pick a Python version. Rebuild the container 
-		// if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
-		"args": { "VARIANT": "3.7-stretch" }
-	},
+	"name": "{{cookiecutter.syncpack_name}}",
+	"image": "syncpack-env:latest",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 

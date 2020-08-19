@@ -1,6 +1,6 @@
 # Update the VARIANT arg in devcontainer.json to pick a Python version: 3, 3.8, 3.7, 3.6 
 ARG VARIANT=3
-FROM python:${VARIANT}
+FROM python:3.7-stretch
 
 # Options for common setup script
 ARG INSTALL_ZSH="true"
@@ -10,7 +10,7 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
-COPY .devcontainer/library-scripts/*.sh /tmp/library-scripts/
+COPY library-scripts/*.sh /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # Remove imagemagick due to https://security-tracker.debian.org/tracker/CVE-2019-10131
     && apt-get purge -y imagemagick imagemagick-6-common \
