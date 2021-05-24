@@ -7,6 +7,27 @@
             "command": "iscli",
             "args": ["-H", "${input:PF-Host}", "-U", "${input:PF-User}", "-p", "${input:PF-Pass}", "-ukFf", "${workspaceFolder}"],
             "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: Initialize",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["install"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: Run All Files",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["run", "--all-files"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: auto-update",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["autoupdate"],
+            "problemMatcher": []
         }
     ],
     "inputs": [

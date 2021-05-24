@@ -2,8 +2,5 @@ pytest
 pytest-cov
 pytest-mock
 requests-mock
-celery==4.1.73
-isbaseutils==1.1.1
-ipaascommon==dev
-pydevpi==1.2.0
-base_steps_syncpack
+ipaascommon==2.2.1
+pre-commit
