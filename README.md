@@ -12,7 +12,17 @@ Using CookieCutter for your project
     $ cookiecutter https://github.com/ScienceLogic/is_syncpack_cookiecutter.git
 
 You will be asked about basic information:
-	author, url_project, syncpack_name, syncpack_friendly_name, syncpack_description, version and the requires_minimum_is_version which is the IS system version where the syncpack is going to be installed
+| Prompt | Description |
+| --- | --- |
+| author | Creator of the SyncPack |
+| url_project | Link to the SyncPack Source Code |
+| syncpack_name | Name of the SyncPack Module |
+| syncpack_friendly_name | Display Name of the SyncPack |
+| syncpack_description | What does this SyncPack do? |
+| version | Initial SyncPack Version |
+| requires_minimum_pf_version | Which version(s) of PowerFlow will this SyncPack support? |
+| dev_container_source | Use SL External if you are not a ScienceLogic employee |
+
 
 Visual Studio Code
 ================================
