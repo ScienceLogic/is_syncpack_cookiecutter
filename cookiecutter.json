@@ -1,10 +1,10 @@
 {
 	"author": "author",
-	"url_project": "https://repository/is_syncpack_test",
+	"url_project": "https://repository/pf_syncpack_test",
 	"syncpack_name": "syncpack_test",
 	"syncpack_friendly_name": "Testing Syncpack",
-	"syncpack_description": "IS Syncpack for testing",
+	"syncpack_description": "PF Syncpack for testing",
 	"version": "0.0.1",
-	"requires_minimum_is_version": ">=2.0.0",
+	"requires_minimum_pf_version": ">=2.0.0",
 	"dev_container_source": ["SL Internal", "SL External"]
 }

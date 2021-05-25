@@ -21,5 +21,5 @@
   ],
   "tags":["{{cookiecutter.syncpack_name}}"],
   "critical": [],
-  "requires_is_version": "{{cookiecutter.requires_minimum_is_version}}"
+  "requires_is_version": "{{cookiecutter.requires_minimum_pf_version}}"
 }
