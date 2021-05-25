@@ -1,6 +1,0 @@
-pytest
-pytest-cov
-pytest-mock
-requests-mock
-ipaascommon==2.2.1
-pre-commit
