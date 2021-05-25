@@ -2,11 +2,10 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/python-3
 {
 	"name": "{{cookiecutter.syncpack_name}}",
-	"image": "syncpack-env:latest",
+	"image": "{{ 'sciencelogic' if cookiecutter.dev_container_source == 'SL External' else 'scr.sl1.io' }}/pf-syncpack-devcontainer:latest",
 
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
+	"settings": {
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
