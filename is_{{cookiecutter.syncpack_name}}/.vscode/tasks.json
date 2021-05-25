@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PF: Build and Upload SyncPack",
+            "type": "shell",
+            "command": "iscli",
+            "args": ["-H", "${input:PF-Host}", "-U", "${input:PF-User}", "-p", "${input:PF-Pass}", "-ukFf", "${workspaceFolder}"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: Initialize",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["install"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: Run All Files",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["run", "--all-files"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Pre-Commit: auto-update",
+            "type": "shell",
+            "command": "pre-commit",
+            "args": ["autoupdate"],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "PF-Host",
+            "type": "promptString",
+            "description": "IP or Hostname of your PowerFlow Stack"
+        },
+        {
+            "id": "PF-User",
+            "type": "promptString",
+            "default": "isadmin",
+            "description": "PowerFlow User"
+        },
+        {
+            "id": "PF-Pass",
+            "type": "promptString",
+            "password": true,
+            "default": "isadmin",
+            "description": "PowerFlow Password"
+        }
+    ]
+}

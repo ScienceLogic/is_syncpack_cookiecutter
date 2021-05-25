@@ -8,4 +8,4 @@ Version: {{cookiecutter.version}}
 ## Version Requirements
 | Platform | Version |
 | --- | --- |
-| IS |  {{cookiecutter.requires_minimum_is_version}} |
+| PF |  {{cookiecutter.requires_minimum_pf_version}} |
