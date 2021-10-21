@@ -1,4 +1,5 @@
 import pytest
+from conftest import SYNCPACK
 
 
 @pytest.mark.parametrize(
@@ -8,7 +9,7 @@ import pytest
             {
                 "name": "DummyStep",
                 "file": "DummyStep",
-                "syncpack": "{{cookiecutter.syncpack_name}}",
+                "syncpack": SYNCPACK,
                 "snow_hostname": "pytest.servicenow.com",
             },
             "foo"
