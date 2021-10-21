@@ -6,5 +6,5 @@ services:
             context: ..
             dockerfile: docker/Dockerfile
             target: test
-        image: is_{{cookiecutter.syncpack_name}}:unit-test
+        image: pf_{{cookiecutter.syncpack_name}}:unit-test
         command: tox
