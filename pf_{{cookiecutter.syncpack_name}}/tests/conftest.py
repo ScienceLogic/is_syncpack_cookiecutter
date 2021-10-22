@@ -1,1 +1,1 @@
-SYNCPACK = {{cookiecutter.syncpack_name}}
+SYNCPACK = "{{cookiecutter.syncpack_name}}"
