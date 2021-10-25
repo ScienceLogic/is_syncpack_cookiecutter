@@ -10,9 +10,9 @@ from ipaascore.BaseStep import BaseStep
 
 def get_obj_from_module(object_name, module):
     try:
-        return getattr(import_module(module), object_name)
-    except (AttributeError, ModuleNotFoundError):
-        return None
+        return getattr(import_module(module), object_name), None
+    except (AttributeError, ModuleNotFoundError) as err:
+        return None, err
 
 
 @pytest.fixture(
@@ -46,9 +46,10 @@ def test_json_app(app_name):
             "syncpack" in step.keys()
         ), "syncpack key must be present in step definition"
         assert step["syncpack"], "syncpack key must have a value"
-        step_object = get_obj_from_module(
+        step_object, error = get_obj_from_module(
             step["file"], f'{step["syncpack"]}.steps.{step["file"]}'
         )
+        assert not error, f"Encountered {error} while testing step {step['name']}"
         assert (
             step_object
         ), f"Step {step['file']} was not found in SyncPack: {step['syncpack']}"
