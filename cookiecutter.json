@@ -6,5 +6,6 @@
 	"syncpack_description": "PF Syncpack for testing",
 	"version": "0.0.1",
 	"requires_minimum_pf_version": ">=2.0.0",
-	"dev_container_source": ["SL Internal", "SL External"]
+	"dev_container_source": ["SL Internal", "SL External"],
+	"dev_container_version":  "latest"
 }

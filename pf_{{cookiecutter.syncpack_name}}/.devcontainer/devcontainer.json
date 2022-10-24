@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/python-3
 {
 	"name": "{{cookiecutter.syncpack_name}}",
-	"image": "{{ 'sciencelogic' if cookiecutter.dev_container_source == 'SL External' else 'scr.sl1.io' }}/pf-syncpack-devcontainer:latest",
+	"image": "{{ 'registry.scilo.tools/sciencelogic' if cookiecutter.dev_container_source == 'SL External' else 'registry.scilo.tools/internal' }}/pf-syncpack-devcontainer:{{cookiecutter.dev_container_version}}",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
@@ -33,5 +33,5 @@
 	"postCreateCommand": "pip3 install -e .",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	 "remoteUser": "python"
 }

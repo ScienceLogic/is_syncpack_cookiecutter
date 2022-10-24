@@ -22,7 +22,7 @@ You will be asked about basic information:
 | version | Initial SyncPack Version |
 | requires_minimum_pf_version | Which version(s) of PowerFlow will this SyncPack support? |
 | dev_container_source | Use SL External if you are not a ScienceLogic employee |
-
+| dev_container_version | dev_container_version image version. i.e. for PF 2.4.1, the version should be 2.4.1 |
 
 Visual Studio Code
 ================================
