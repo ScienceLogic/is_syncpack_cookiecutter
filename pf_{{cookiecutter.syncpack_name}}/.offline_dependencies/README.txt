@@ -1,0 +1,1 @@
+Copy all the needed wheels(including SL Syncpacks) files into this .offline_dependencies directory
