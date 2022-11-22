@@ -1,0 +1,23 @@
+{
+	"PFStep": {
+		"prefix": "pfstep",
+		"body": [
+		  "from ipaascore.BaseStep import BaseStep",
+		  "from ipaascore import parameter_types",
+		  "from ipaascommon import ipaas_exceptions",
+		  "",
+		  "",
+		  "class ${NAME}(BaseStep):",
+		  "",
+		  "    def __init__(self):",
+		  "        self.friendly_name = \"${FriendlyName}\"",
+		  "        self.description = \"${Description}\"",
+		  "        self.version = \"1.0.0\"",
+		  " ",
+		  "    def execute(self):",
+		  "",
+		  ""
+		],
+		"description": "PF Step"
+	  }
+}

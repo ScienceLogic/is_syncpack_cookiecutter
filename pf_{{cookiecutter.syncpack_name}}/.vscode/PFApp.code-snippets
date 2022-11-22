@@ -1,0 +1,37 @@
+{
+	"PFApp": {
+		"scope": "json",
+		"prefix": "pfapp",
+		"body": [
+		  "{",
+		  "  \"friendly_name\": \"${FriendlyName}\",",
+		  "  \"description\": \"Application template for creating apps\",",
+		  "  \"configuration\": \"\",",
+		  "  \"author\": \"${AuthorName}\",",
+		  "  \"version\": \"1.0.0\",",
+		  "  \"app_variables\": [",
+		  "    {\"name\": \"exampleVariable\", \"value\" : \"exampleValue\",",
+		  "     \"description\": \"Variables defined here will be available in all steps of an application. Note that setting app variables manually is not recommended. Whenever an app is saved with steps referencing an appvar, one will automatically be created\",",
+		  "     \"required\": true,",
+		  "     \"sample_value\": \"SampleValue\", \"default_value\": \"DefaultValue\"",
+		  "    }",
+		  "  ],",
+		  "  \"steps\":[",
+		  "    {",
+		  "      \"name\": \"GETgoogle.com\",",
+		  "      \"file\": \"QueryREST\",",
+		  "      \"prefix_url\": \"http://google.com\",",
+		  "      \"method\": \"GET\",",
+		  "      \"output_to\": [\"next_step\"]",
+		  "    },",
+		  "    {",
+		  "      \"name\": \"next_step\",",
+		  "      \"file\": \"someOtherTask\"",
+		  "    }",
+		  "  ]",
+		  "}",
+		  ""
+		],
+		"description": "PFApp"
+	  }
+}

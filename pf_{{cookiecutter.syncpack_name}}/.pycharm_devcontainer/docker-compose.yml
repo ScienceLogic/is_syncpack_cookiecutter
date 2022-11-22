@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  devsteprunner:
+    image:  "{{cookiecutter.syncpack_name}}:pycharm_dependencies"
+    build:
+      context: ..
+      dockerfile: .pycharm_devcontainer/Dockerfile
+    volumes:
+      - .:/workspaces/pf_{{cookiecutter.syncpack_name}}
+#    network_mode: host # For linux envs only

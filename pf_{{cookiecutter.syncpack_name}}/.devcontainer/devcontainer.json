@@ -25,13 +25,21 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
+
+	// Uncomment to mount secondary syncpacks directories, update the corresponding host path /home/username/pf_syncpacks_workspace
+	// "mounts": [
+	// 	"source=/home/username/pf_syncpacks_workspace,target=/workspaces,type=bind"
+	// ],
+
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install -e .",
+	"postCreateCommand": "pip3 install --user -f .offline_dependencies --disable-pip-version-check --retries 0 --no-warn-script-location -e .",
+
+	// Uncomment for linux system
+	// "runArgs": ["--network", "host"],
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	 "remoteUser": "python"
+	"remoteUser": "python"
 }

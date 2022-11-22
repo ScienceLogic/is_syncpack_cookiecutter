@@ -28,6 +28,24 @@
             "command": "pre-commit",
             "args": ["autoupdate"],
             "problemMatcher": []
+        },
+        {
+            "label": "PF: Install SP - Offline Dependencies",
+            "type": "shell",
+            "command": "pip3 install -f ${input:Offline-Directory} --disable-pip-version-check --retries 0 --no-warn-script-location -e ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "PF: Install SP - Dependencies from PF(devpi)",
+            "type": "shell",
+            "command": "pip3 install --disable-pip-version-check --retries 0 --no-warn-script-location --extra-index-url https://${input:PF-User}:${input:PF-Pass}@${input:PF-Host}:3141/isadmin/syncpacks --trusted-host ${input:PF-Host} -e ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "PF: Install SP - Dependencies from PF(devpi) + Offline dependencies",
+            "type": "shell",
+            "command": "pip3 install -f ${input:Offline-Directory} --disable-pip-version-check --retries 0 --no-warn-script-location --extra-index-url https://${input:PF-User}:${input:PF-Pass}@${input:PF-Host}:3141/isadmin/syncpacks --trusted-host ${input:PF-Host} -e ${workspaceFolder}",
+            "problemMatcher": []
         }
     ],
     "inputs": [
@@ -48,6 +66,12 @@
             "password": true,
             "default": "isadmin",
             "description": "PowerFlow Password"
+        },
+        {
+            "id": "Offline-Directory",
+            "type": "promptString",
+            "default": "${workspaceFolder}/.offline_dependencies",
+            "description": "Offline Dependencies Directory"
         }
     ]
 }
