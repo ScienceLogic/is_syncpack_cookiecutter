@@ -2,20 +2,28 @@ import pytest
 from conftest import SYNCPACK
 
 
+STEP_NAME = "DummyStep"
+
+test_data = [
+    (
+        {
+            "name": STEP_NAME,
+            "file": STEP_NAME,
+            "syncpack": SYNCPACK,
+            "dummy_step_parameter": "dummy_string",  # example of a step parameter
+        },
+        {},
+        "foo",
+    )
+]
+
+
 @pytest.mark.parametrize(
-    "stepdict,outdata",
-    [
-        (
-            {
-                "name": "DummyStep",
-                "file": "DummyStep",
-                "syncpack": SYNCPACK,
-                "snow_hostname": "pytest.servicenow.com",
-            },
-            "foo"
-        )
-    ],
+    "step_dict, in_data, out_data", test_data, ids=["first test"],
 )
-def test_ProcessEventTrigger(stepdict, outdata, syncpack_step_runner):
-    processed_data = syncpack_step_runner.run(stepdict)
-    assert processed_data == outdata
+def test_DummyStep(step_dict, in_data, out_data, syncpack_step_runner):
+    # input data helps to simulate the data received from previous step(s)
+    syncpack_step_runner.data_in = in_data
+    data = syncpack_step_runner.run(step_dict)
+    # output data represents the data saved for the next step using self.save_data_for_next_step("foo")
+    assert data == out_data
