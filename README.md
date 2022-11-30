@@ -32,7 +32,7 @@ DevContainer
 ------------
 The generated package will contain a [Visual Studio Code DevContainer](https://code.visualstudio.com/docs/remote/containers)  
 When you open the generated folder with VSCode you will get a prompt to open the workspace within the container.  
-This Container contains a functional environment for developing and testing your SyncPack steps without the need of a full PowerFlow system.
+This PowerFlow Syncpack SDK(DevContainer) contains a functional environment for developing and testing your SyncPack steps without the need of a full PowerFlow system.
 
 **Usage**
 1. After completing the cookie cutter run, open the generated folder in Visual Studio Code
@@ -85,7 +85,82 @@ Usage:
 1. Run `Tasks: Run Task`
 1. Choose `Pre-Commit: auto-update`
 
+### PF: Install SP - Offline Dependencies
+Allows to install the current syncpack using offline dependencies.
+
+Usage:
+1. Open the Command Pallet
+1. Run `Tasks: Run Task`
+1. Choose `PF: Install SP - Offline Dependencies`
+1. Input a Workspace Directory to read offline dependencies (default: ${workspaceFolder}/.offline_dependencies)
+
+### PF: Install SP - Dependencies from PF(devpi)
+Allows to install the current syncpack using a remote PF system.
+
+Usage:
+1. Open the Command Pallet
+1. Run `Tasks: Run Task`
+1. Choose `PF: Install SP - Dependencies from PF(devpi)`
+1. Input a Workspace Directory to read offline dependencies (default: ${workspaceFolder}/.offline_dependencies)
+1. Input your PF Hostname or IP
+1. Input your PF Username (default: isadmin)
+1. Input your PF Password (default: isadmin)
+
+### PF: Install SP - Dependencies from PF(devpi) + Offline dependencies
+Allows to install the current syncpack using a remote PF system and offline dependencies.
+
+Usage:
+1. Open the Command Pallet
+1. Run `Tasks: Run Task`
+1. Choose `PF: Install SP - Dependencies from PF(devpi) + Offline dependencies`
+1. Input a Workspace Directory to read offline dependencies (default: ${workspaceFolder}/.offline_dependencies)
+1. Input your PF Hostname or IP
+1. Input your PF Username (default: isadmin)
+1. Input your PF Password (default: isadmin)
+
+Snippets
+-----
+### PF Apps Snippet
+The PFApp.code-snippets snippet allows to quickly have a basic application structure.
+Usage:
+1. Create a json file with the corresponding application name in the apps folder
+2. In the file write **pfapp** and when vscode suggests the expected snippet to use, press Enter
+3. The cursor will be positioned in the property that needs to be edited
+4. Press Tab to go the next property to edit
+
+### PF Step Snippet
+The PFStep.code-snippets snippet allows to quickly have a basic step structure.
+
+Usage:
+1. Create a python file with the corresponding step name in the steps folder
+2. In the file start writing **pfstep** and when vscode suggests the expected snippet to use, press Enter
+3. The cursor will be positioned in the property that needs to be edited
+4. Press Tab to go the next property to edit
+
+### PF Step Test Snippet
+The PFStepTest.code-snippets snippet allows to quickly have a basic step structure.
+
+Usage:
+1. Create a python file with the corresponding step test name in the tests/steps folder
+2. In the file start writing **pfsteptest** and when vscode suggests the expected snippet to use, press Enter
+3. The cursor will be positioned in the property that needs to be edited
+4. Press Tab to go the next property to edit
+
+More details on how to use and create snippets in [VSCode official documentation](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
 Settings
 --------
 The generated package will contain a `settings.json` to enable `pytest` and configure test discovery.
+
+PyCharm
+================================
+The generated package includes PyCharm configuration settings to improve the SyncPack development process.
+
+**Usage**
+1. After completing the cookie cutter run, open the generated folder in PyCharm.
+   1. When working with more than 1 syncpack repository, it is recommended to open the root directory in which the needed repositories are located.
+2. The .pycharm_devcontainer folder contains files to configure a Docker Python Interpreter in PyCharm
+3. Mark the syncpack directory as Source. Using Right Click > Mark Directory as > Sources Root
+4. Configure the docker-compose.yml file located in .pycharm_devcontainer/docker-compose.yml as a Docker Compose Remote Python interpreter. Follow the instruction in [PyCharm official documentation](https://www.jetbrains.com/help/pycharm/using-docker-compose-as-a-remote-interpreter.html#docker-compose-remote).
+5. Select the interpreter created in the step 4 as default for your workspace
+6. Your environment should now be ready

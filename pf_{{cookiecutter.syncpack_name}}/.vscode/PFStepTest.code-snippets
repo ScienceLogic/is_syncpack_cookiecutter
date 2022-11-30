@@ -1,0 +1,31 @@
+{
+	"PFStepTest": {
+		"prefix": "pfsteptest",
+		"body": [
+		  "import pytest",
+		  "from conftest import SYNCPACK",
+		  "",
+		  "",
+		  "STEP_NAME = \"${name}\"",
+		  "",
+		  "test_data = [",
+		  "    (",
+		  "        {",
+		  "            \"name\": STEP_NAME,",
+		  "            \"file\": STEP_NAME,",
+		  "            \"syncpack\": SYNCPACK",
+		  "        },",
+		  "        {},",
+		  "    )",
+		  "]",
+		  "",
+		  "@pytest.mark.parametrize(",
+		  "    \"step_dict,out_data\", test_data, ids=[\"first test\"],",
+		  ")",
+		  "def test_${name}(step_dict, out_data, syncpack_step_runner):",
+		  "    data = syncpack_step_runner.run(step_dict)",
+		  "    assert data == out_data"
+		],
+		"description": "PFStepTest"
+	  }
+}
