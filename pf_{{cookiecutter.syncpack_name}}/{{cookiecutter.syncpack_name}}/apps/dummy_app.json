@@ -1,13 +1,24 @@
 {
+  "friendly_name": "Dummy App",
   "description": "Dummy Application as example",
   "author": "{{cookiecutter.author}}",
-  "app_variables": [],
-  "friendly_name": "Dummy App",
   "version": "1.0.0",
+  "app_variables": [],
   "steps": [
     {
-      "name": "ds1",
+      "name": "Dummy Step",
       "file": "DummyStep",
+      "syncpack": "{{cookiecutter.syncpack_name}}",
+      "output_to": [
+        "Dummy Step 2"
+      ]
+    },
+    {
+      "data_from": [
+        "Dummy Step"
+      ],
+      "name": "Dummy Step 2",
+      "file": "DummyStep2",
       "syncpack": "{{cookiecutter.syncpack_name}}"
     }
   ]
