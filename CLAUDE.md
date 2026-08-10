@@ -37,7 +37,7 @@ is_syncpack_cookiecutter/
     │   ├── apps/                           # App JSON definitions
     │   ├── steps/                          # BaseStep subclasses
     │   ├── configs/                        # Configuration JSON files
-    │   └── samcp_components/              # MCP stubs (removed if not requested)
+    │   └── samcp_components/              # MCP stubs incl. apps/ (removed if not requested)
     └── tests/
         ├── conftest.py                     # Exposes SYNCPACK name; syncpack_step_runner fixture
         ├── test_app_files.py               # Validates all app JSONs and step imports
@@ -116,6 +116,8 @@ class MyTool(BaseTool):
 ```
 
 The `SYNCPACK` constant at the top of each stub file is a placeholder — replace it with the actual syncpack name.
+
+When `include_mcp_components=yes`, an `apps/` stub is also generated: `apps/dummy_app.py`, class `DummyApp` — a self-contained `FastMCPApp` subclass (from `fastmcp.apps.app`) with one `@self.ui` entry point returning a `prefab_ui` `PrefabApp`. sa_mcp discovers it (scanning `samcp_components/apps/*.py` for locally-defined `FastMCPApp` subclasses) and registers it as a live provider, not flattened into tools/resources/prompts. This is unrelated to the workflow `apps/*.json` step-sequence definitions elsewhere in the package. Unlike the other stubs, the app has no `self.prefix`/`SYNCPACK` namespacing. The stub imports only `fastmcp` + `prefab_ui` and must never import `base_steps_syncpack` — the generated syncpack cannot assume base_steps is installed.
 
 ## Generated Project: Commands
 

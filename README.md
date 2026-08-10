@@ -176,6 +176,8 @@ The cookiecutter includes support for embedding MCP components within SyncPacks 
 
 ```
 samcp_components/
+├── apps/
+│   └── dummy_app.py
 ├── prompts/
 │   └── prompts.py
 ├── resources/
@@ -207,5 +209,13 @@ The `samcp_components` directory provides a standardized framework for building 
 - Extend `BaseTool` for executing specific operations and utilities
 - Example: `DummyTool` class with `dummy_function(name: str, config: str)` returning configuration data
 - Used for performing actions that modify state or execute operations (create files, send emails, run commands)
+
+**Apps** (`apps/dummy_app.py`)
+- A `FastMCPApp` subclass (from `fastmcp.apps.app`) placed under `samcp_components/apps/`. Unlike Tools/Resources/Prompts/Templates (which set `self.prefix`), an app is a live provider: it registers one or more model-visible entry points via `@self.ui(...)`, each returning a `prefab_ui` `PrefabApp` UI that is rendered in UI-capable MCP clients.
+- Example: `DummyApp` with a single `dummy_app(name: str)` entry point returning a placeholder `PrefabApp` view.
+- Requires the `fastmcp-slim[apps]` extra (prefab-ui), which is present in the SAMCP dev container / image but is not resolvable on a bare host.
+- The stub imports **only** `fastmcp` and `prefab_ui` — it must never import `base_steps_syncpack` or any sibling syncpack, since the generated syncpack cannot assume base_steps is installed. For an example of the more advanced pattern (app-only backend tools the UI invokes that stay hidden from the model, plus the FastMCP 3.4.x registration workaround), read `base_steps_syncpack/samcp_components/apps/syncpack_setup.py` for guidance only — do not import from it.
+
+**How sa_mcp discovers apps:** sa_mcp's component manager scans `{syncpack}/samcp_components/apps/*.py` (skipping `__init__.py`), finds classes that subclass `FastMCPApp`, are not `FastMCPApp` itself, and are **defined in that module** (imported subclasses are ignored, so importing `FastMCPApp` at the top of the stub does not cause double-registration). Each match is instantiated with no args and registered as a real `FastMCPApp` provider — not flattened into tools/resources/prompts.
 
 All components include dummy implementations as starting points that should be customized for your specific use case.
